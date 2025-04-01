@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      glob: '*.{js,ts,jsx,tsx,yml,json,md}'
+      stage_fixed: true
+      run: bun eslint --fix {staged_files}
+    format:
+      glob: '*.{js,ts,jsx,tsx,yml,json,md}'
+      stage-fixed: true
+      run: bun prettier --write {staged_files}
